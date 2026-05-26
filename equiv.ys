@@ -1,0 +1,18 @@
+read_verilog alu_4bit.v
+rename alu_4bit gold
+
+read_verilog alu_4bit_netlist.v
+rename alu_4bit gate
+
+equiv_make gold gate equiv
+hierarchy -top equiv
+
+proc
+opt
+
+memory
+opt
+
+equiv_simple
+
+equiv_status

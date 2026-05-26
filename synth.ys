@@ -1,0 +1,11 @@
+read_verilog alu_4bit.v
+
+synth -top alu_4bit
+
+opt
+techmap
+opt
+
+write_verilog alu_4bit_netlist.v
+
+stat
